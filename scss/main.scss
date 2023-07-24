@@ -1,0 +1,136 @@
+// font-family: 'Fraunces', serif;
+@use './colors' as *;
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	background-color: $Cream;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.perfume__card {
+	width: 340px;
+	height: 600px;
+	background-color: $White;
+	border-radius: 1em;
+	overflow: hidden;
+
+	&-img {
+		height: 40%;
+		width: 100%;
+		background-image: url(../images/image-product-mobile.jpg);
+		background-size: cover;
+		background-position: center;
+	}
+
+	&-box {
+		height: 60%;
+		padding: 1.7em;
+		font-size: 1.4rem;
+	}
+
+	&-tag {
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		color: $Dark-grayish-blue;
+		letter-spacing: 0.3em;
+	}
+
+	&-heading {
+		margin: 0.5em 0;
+		font-size: 3rem;
+		font-family: 'Fraunces', serif;
+		line-height: 1em;
+	}
+
+	&-text {
+		margin-bottom: 1.2em;
+		color: $Dark-grayish-blue;
+		line-height: 1.6em;
+	}
+
+	&-price {
+		margin-bottom: 0.6em;
+		font-size: 3rem;
+		font-family: 'Fraunces', serif;
+		color: $Dark-cyan;
+
+		&-discount {
+			position: absolute;
+			line-height: 3.7rem;
+			padding-left: 1.5em;
+			font-size: 1.2rem;
+			font-family: 'Montserrat', sans-serif;
+			text-decoration: line-through;
+			color: $Dark-grayish-blue;
+		}
+	}
+
+	&-btn {
+		width: 100%;
+		height: 3.4em;
+		background-color: $Dark-cyan;
+		color: $White;
+		font-weight: bold;
+		border-radius: 8px;
+		border: none;
+		cursor: pointer;
+		transition: background-color 0.3s;
+
+		span {
+			// position: absolute;
+			padding-right: 0.8em;
+		}
+
+		&:hover {
+			background-color: $Deep-dark-cyan;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.perfume__card {
+		display: flex;
+		height: 380px;
+		width: 550px;
+
+		&-img {
+			height: 100%;
+			width: 50%;
+			background-image: url(../images/image-product-desktop.jpg);
+		}
+
+		&-box {
+			width: 50%;
+		}
+
+		&-btn {
+			height: 3em;
+		}
+	}
+}
+
+.attribution {
+	margin-top: 2em;
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
